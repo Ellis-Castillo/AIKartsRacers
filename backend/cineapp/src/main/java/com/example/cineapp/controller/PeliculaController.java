@@ -3,6 +3,7 @@ package com.example.cineapp.controller;
 import com.example.cineapp.model.Pelicula;
 import com.example.cineapp.service.PeliculaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +26,7 @@ public class PeliculaController {
         return peliculaService.findById(id);
     }
 
-    @GetMapping("/genero/{generoId}")
+    @GetMapping("/generos/{generoId}")
     public List<Pelicula> getByGenero(@PathVariable Long generoId) {
         return peliculaService.findByGeneroId(generoId);
     }
@@ -36,7 +37,8 @@ public class PeliculaController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         peliculaService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

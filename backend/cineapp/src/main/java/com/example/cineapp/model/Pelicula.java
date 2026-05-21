@@ -1,5 +1,7 @@
 package com.example.cineapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,5 +28,6 @@ public class Pelicula {
 
     @ManyToOne
     @JoinColumn(name = "genero_id")
+    @JsonIgnore
     private Genero genero;
 }
