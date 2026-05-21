@@ -13,9 +13,11 @@ export class PeliculaService {
     return this.http.get<Pelicula[]>(this.apiUrl);
   }
 
-  getByGenero(generoId: number): Observable<Pelicula[]> {
-    return this.http.get<Pelicula[]>(`${this.apiUrl}/genero/${generoId}`);
-  }
+getByGenero(generoId: number): Observable<Pelicula[]> {
+  return this.http.get<Pelicula[]>(
+    `${this.apiUrl}/generos/${generoId}`
+  );
+}
 
   create(pelicula: Pelicula): Observable<Pelicula> {
     return this.http.post<Pelicula>(this.apiUrl, pelicula);

@@ -36,13 +36,20 @@ export class PeliculaFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.form.valid) {
-      const { generoId, ...rest } = this.form.value;
-      const genero = this.generos().find((g: Genero) => g.id === Number(generoId));
-      if (!genero) return;
-      this.peliculaService.create({ ...rest, genero }).subscribe(() => {
-        this.router.navigate(['/generos']);
-      });
-    }
+  if (this.form.valid) {
+    const value = this.form.value;
+
+    const payload = {
+      titulo: value.titulo,
+      anio: value.anio,
+      director: value.director,
+      sinopsis: value.sinopsis,
+      genero: { id: Number(value.generoId) }
+    };
+
+    this.peliculaService.create(payload).subscribe(() => {
+      this.router.navigate(['/generos', value.generoId]);
+    });
   }
+}
 }
