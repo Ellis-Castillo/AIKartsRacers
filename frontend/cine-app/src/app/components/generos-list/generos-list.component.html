@@ -1,0 +1,13 @@
+<div>
+  <h1>🎬 Géneros de Películas</h1>
+  <a routerLink="/peliculas/nueva">+ Añadir Película</a>
+
+  @for (genero of generos(); track genero.id) {
+    <div>
+      <a [routerLink]="['/generos', genero.id]">
+        <h2>{{ genero.nombre }}</h2>
+        <p>{{ genero.descripcion }}</p>
+      </a>
+    </div>
+  }
+</div>
