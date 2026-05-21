@@ -27,4 +27,14 @@ public class Pelicula {
     @ManyToOne
     @JoinColumn(name = "genero_id")
     private Genero genero;
+
+    public void setId(){}
+
+    public void setTitulo(){}
+
+    public void setDirector(){}
+
+    public void setSinopsis(){}
+
+    public void setAnio(){}
 }
