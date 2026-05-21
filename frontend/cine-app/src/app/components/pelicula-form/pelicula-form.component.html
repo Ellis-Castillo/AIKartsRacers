@@ -1,0 +1,30 @@
+<div>
+  <h2>Nueva Película</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Título</label>
+      <input formControlName="titulo" type="text" />
+    </div>
+    <div>
+      <label>Año</label>
+      <input formControlName="anio" type="number" />
+    </div>
+    <div>
+      <label>Director</label>
+      <input formControlName="director" type="text" />
+    </div>
+    <div>
+      <label>Sinopsis</label>
+      <textarea formControlName="sinopsis"></textarea>
+    </div>
+    <div>
+      <label>Género</label>
+      <select formControlName="generoId">
+        @for (genero of generos(); track genero.id) {
+          <option [value]="genero.id">{{ genero.nombre }}</option>
+        }
+      </select>
+    </div>
+    <button type="submit" [disabled]="form.invalid">Guardar</button>
+  </form>
+</div>

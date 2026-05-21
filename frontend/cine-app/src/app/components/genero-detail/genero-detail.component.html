@@ -1,0 +1,12 @@
+<div>
+  @if (genero()) {
+    <h2>{{ genero()!.nombre }}</h2>
+  }
+  <h3>Películas</h3>
+  <ul>
+    @for (pelicula of peliculas(); track pelicula.id) {
+      <li>{{ pelicula.titulo }} ({{ pelicula.anio }})</li>
+    }
+  </ul>
+  <a routerLink="/generos">← Volver</a>
+</div>

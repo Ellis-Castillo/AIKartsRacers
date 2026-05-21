@@ -8,5 +8,4 @@ import java.util.List;
 
 @Repository
 public interface GeneroRepository extends JpaRepository<Genero, Long> {
-    List<Genero> findByPeliculaId(Long peliculaId);
 }

@@ -25,7 +25,7 @@ public class PeliculaController {
         return peliculaService.findById(id);
     }
 
-    @GetMapping("/generos/{generoId}")
+    @GetMapping("/genero/{generoId}")
     public List<Pelicula> getByGenero(@PathVariable Long generoId) {
         return peliculaService.findByGeneroId(generoId);
     }

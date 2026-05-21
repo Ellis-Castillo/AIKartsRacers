@@ -23,36 +23,4 @@ public class Genero {
 
     @OneToMany(mappedBy = "genero", cascade = CascadeType.ALL)
     private List<Pelicula> peliculas;
-
-    public void setId(Long id){
-        this.id = id;
-    }
-
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-
-    public void setDescripcion(String descripcion){
-        this.descripcion = descripcion;
-    }
-
-    public void setPeliculas(List<Pelicula> peliculas){
-        this.peliculas = peliculas;
-    }
-
-    public Long getId(){
-        return id;
-    }
-
-    public String getNombre(){
-        return nombre;
-    }
-
-    public String getDescripcion(){
-        return descripcion;
-    }
-
-    public List<Pelicula> getPeliculas(){
-        return peliculas;
-    }
 }
