@@ -48,6 +48,10 @@ public class Pelicula {
         this.sinopsis = sinopsis;
     }
 
+    public void setGenero(Genero genero){
+        this.genero = genero;
+    }
+
     public Long getId(){
         return id;
     }
@@ -66,5 +70,9 @@ public class Pelicula {
 
     public String getSinopsis(){
         return sinopsis;
+    }
+
+    public Genero getGenero(){
+        return genero;
     }
 }
