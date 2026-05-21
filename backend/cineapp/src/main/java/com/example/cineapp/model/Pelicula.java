@@ -28,13 +28,43 @@ public class Pelicula {
     @JoinColumn(name = "genero_id")
     private Genero genero;
 
-    public void setId(){}
+    public void setId(Long id){
+        this.id = id;
+    }
 
-    public void setTitulo(){}
+    public void setTitulo(String titulo){
+        this.titulo = titulo;
+    }
 
-    public void setDirector(){}
+    public void setAnio(int anio){
+        this.anio = anio;
+    }
 
-    public void setSinopsis(){}
+    public void setDirector(String director){
+        this.director = director;
+    }
 
-    public void setAnio(){}
+    public void setSinopsis( String sinopsis){
+        this.sinopsis = sinopsis;
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public String getTitulo(){
+        return titulo;
+    }
+
+    public int getAnio(){
+        return anio;
+    }
+
+    public String getDirector(){
+        return director;
+    }
+
+    public String getSinopsis(){
+        return sinopsis;
+    }
 }
